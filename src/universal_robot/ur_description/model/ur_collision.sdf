@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+	<model name="ur_collision">
+		<static>true</static>
+		<link name="link">
+			<collison name="surface">
+				
+			</collisison>
+		</link>
+	</model>
+</sdf>
