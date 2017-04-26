@@ -1,8 +1,0 @@
-prefix=/home/jon/ros/indigo/ur3_ws/install
-
-Name: ur3_moveit_config
-Description: Description of ur3_moveit_config
-Version: 1.1.6
-Cflags: 
-Libs: -L/home/jon/ros/indigo/ur3_ws/install/lib 
-Requires: 

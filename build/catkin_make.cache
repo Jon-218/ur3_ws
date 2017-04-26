@@ -1,2 +1,0 @@
-universal_robot/universal_robot:universal_robot/ur3_moveit_config:universal_robot/ur_bringup:universal_robot/ur_description:universal_robot/ur_driver:universal_robot/ur_gazebo:universal_robot/ur_kinematics:universal_robot/ur_msgs:universal_robot/ur_python:universal_robot/ur_test
--DCATKIN_DEVEL_PREFIX=/home/jon/ros/indigo/ur3_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jon/ros/indigo/ur3_ws/install -G Unix Makefiles

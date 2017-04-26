@@ -1,6 +1,0 @@
-set(ur_python_SETUP_PY_VERSION "0.0.0")
-set(ur_python_SETUP_PY_SCRIPTS "")
-set(ur_python_SETUP_PY_PACKAGES "")
-set(ur_python_SETUP_PY_PACKAGE_DIRS "")
-set(ur_python_SETUP_PY_MODULES "")
-set(ur_python_SETUP_PY_MODULE_DIRS "")
