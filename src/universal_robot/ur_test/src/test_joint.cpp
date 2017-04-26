@@ -38,6 +38,14 @@ int main(int argc, char **argv)
 
 	group.rememberJointValues("ready", group_variable_values);
 
+	group_variable_values[3] = -3.14159;
+	group.rememberJointValues("face", group_variable_values);
+
+	group_variable_values[2] = 0;
+	group_variable_values[3] = -1.5708;
+	group_variable_values[4] = 0;
+	group.rememberJointValues("stand", group_variable_values);
+
 	for(int i = 0; i < 6; ++i)
 		group_variable_values[i] = 0;
 
@@ -47,6 +55,7 @@ int main(int argc, char **argv)
 	moveit::planning_interface::MoveGroup::Plan my_plan;
 	bool success = group.plan(my_plan);
 	bool success2 = group.execute(my_plan);
+	std::cout<<my_plan.trajectory_.joint_trajectory.points[2]<<std::endl;
 	ROS_INFO("Visuallizing plan 1 (pose goal) %s", success?"":"FAILED");
 	ROS_INFO("Visuallizing execute 1 (pose goal) %s", success2?"":"FAILED");
 

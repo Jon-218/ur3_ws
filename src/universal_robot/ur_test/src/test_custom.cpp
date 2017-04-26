@@ -21,13 +21,20 @@ int main(int argc, char **argv)
 	std::cout<<"DefualtPlannerID: "<<group.getDefaultPlannerId("manipulator")<<std::endl;
 
 	geometry_msgs::Pose target_pose1;
-	target_pose1.position.x = 0.4218;
-	target_pose1.position.y = 0.1942;
-	target_pose1.position.z = 0.0965;
-	target_pose1.orientation.x = -0.211307;
-	target_pose1.orientation.y = 0.467779;
-	target_pose1.orientation.z = 0.640848;
-	target_pose1.orientation.w = 0.570828;
+	//target_pose1.position.x = 0.4218;
+	//target_pose1.position.y = 0.1942;
+	//target_pose1.position.z = 0.0965;
+	//target_pose1.orientation.x = -0.211307;
+	//target_pose1.orientation.y = 0.467779;
+	//target_pose1.orientation.z = 0.640848;
+	//target_pose1.orientation.w = 0.570828;
+	target_pose1.position.x = 0.29516;
+	target_pose1.position.y = 0.11232;
+	target_pose1.position.z = 0.37264;
+	target_pose1.orientation.x = 0;
+	target_pose1.orientation.y = 0;
+	target_pose1.orientation.z = 0;
+	target_pose1.orientation.w = 1;
 	group.setPoseTarget(target_pose1);
 
 	geometry_msgs::Pose target_pose0 = target_pose1;

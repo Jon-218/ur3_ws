@@ -1,0 +1,8 @@
+prefix=/home/jon/ros/indigo/ur3_ws/devel
+
+Name: ur_test
+Description: Description of ur_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jon/ros/indigo/ur3_ws/devel/lib 
+Requires: 

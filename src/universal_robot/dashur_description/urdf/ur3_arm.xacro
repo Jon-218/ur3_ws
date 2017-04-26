@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- common stuff -->
+	<xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" />
+
+  <!-- ur3 -->
+  <xacro:include filename="$(find dashur_description)/urdf/ur3.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:ur3_robot prefix="" joint_limited="false"/>
+
+  
+  <!--<link name="world" />-->
+
+  <joint name="dashgo_joint" type="fixed">
+    <parent link="dash_link" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0" />
+  </joint>
+
+
+</robot>

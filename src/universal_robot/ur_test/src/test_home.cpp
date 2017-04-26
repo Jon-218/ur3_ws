@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 	joint_val[0] = joint_val[2];
 	joint_val[2] = temp;
 	
+	//获取初始状态的关节角
 	robot_state.setJointGroupPositions("manipulator", joint_val);
 	planning_scene->setCurrentState(robot_state);
 	for(std::size_t i = 0; i < joint_val.size(); ++i)
@@ -87,13 +88,20 @@ int main(int argc, char **argv)
 	geometry_msgs::PoseStamped pose;
 	pose.header.frame_id = "base_link";
 
-	pose.pose.position.x = 0.4218;
-	pose.pose.position.y = 0.1942;
-	pose.pose.position.z = 0.1965;
-	pose.pose.orientation.x = -0.211307;
-	pose.pose.orientation.y = 0.467779;
-	pose.pose.orientation.z = 0.640848;
-	pose.pose.orientation.w = 0.570828;
+	//pose.pose.position.x = 0.4218;
+	//pose.pose.position.y = 0.1942;
+	//pose.pose.position.z = 0.1965;
+	//pose.pose.orientation.x = -0.211307;
+	//pose.pose.orientation.y = 0.467779;
+	//pose.pose.orientation.z = 0.640848;
+	//pose.pose.orientation.w = 0.570828;
+	pose.pose.position.x = 0.29516;
+	pose.pose.position.y = 0.11232;
+	pose.pose.position.z = 0.37264;
+	pose.pose.orientation.x = 0;
+	pose.pose.orientation.y = 0;
+	pose.pose.orientation.z = 0;
+	pose.pose.orientation.w = 1;
 
 	geometry_msgs::PoseStamped pose2 = pose;
 	pose2.pose.position.z = 0.1;
@@ -108,15 +116,18 @@ int main(int argc, char **argv)
 	shape_msgs::SolidPrimitive primitive;
 	primitive.type = primitive.BOX;
 	primitive.dimensions.resize(3);
-	primitive.dimensions[primitive.BOX_X] = 0.05;
-	primitive.dimensions[primitive.BOX_Y] = 0.2;
+	//primitive.dimensions[primitive.BOX_X] = 0.05;
+	//primitive.dimensions[primitive.BOX_Y] = 0.2;
+	//primitive.dimensions[primitive.BOX_Z] = 0.01;
+	primitive.dimensions[primitive.BOX_X] = 0.01;
+	primitive.dimensions[primitive.BOX_Y] = 0.07;
 	primitive.dimensions[primitive.BOX_Z] = 0.01;
 
 	geometry_msgs::Pose pose_collison;
 	pose_collison.orientation.w = 1.0;
 	pose_collison.position.x =  0.3;
-	pose_collison.position.y =  0.2;
-	pose_collison.position.z =  0.26;
+	pose_collison.position.y =  0.11;
+	pose_collison.position.z =  0.43;
 
 	flat.primitives.push_back(primitive);
 	flat.primitive_poses.push_back(pose_collison);
@@ -129,8 +140,8 @@ int main(int argc, char **argv)
 	//执行规划
 	req.group_name = "manipulator";
 	moveit_msgs::Constraints pose_goal = kinematic_constraints::constructGoalConstraints("ee_link", pose, tolerance_pose, tolerance_angle);
-	moveit_msgs::Constraints pose_goal2 = kinematic_constraints::constructGoalConstraints("ee_link", pose2, tolerance_pose, tolerance_angle);
-	req.goal_constraints.push_back(pose_goal2);
+	//moveit_msgs::Constraints pose_goal2 = kinematic_constraints::constructGoalConstraints("ee_link", pose2, tolerance_pose, tolerance_angle);
+	//req.goal_constraints.push_back(pose_goal2);
 	req.goal_constraints.push_back(pose_goal);
  
 	planning_interface::PlanningContextPtr context = planner_instance->getPlanningContext(planning_scene, req, res.error_code_);
@@ -157,8 +168,8 @@ int main(int argc, char **argv)
 	moveit::planning_interface::MoveGroup group("manipulator");
 	moveit::planning_interface::MoveGroup::Plan my_plan;
 
-	my_plan.start_state_ = respone.trajectory_start;
-	my_plan.trajectory_ = respone.trajectory;
+	//my_plan.start_state_ = respone.trajectory_start;
+	//my_plan.trajectory_ = respone.trajectory;
 
 //	moveit::planning_interface::MoveGroup group("manipulator");
 //	moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
@@ -185,9 +196,13 @@ int main(int argc, char **argv)
 //
 //	moveit::planning_interface::MoveGroup::Plan my_plan;
 //	bool success = group.move();
-	bool success2 = group.execute(my_plan);
+		my_plan.start_state_ = respone.trajectory_start;
+		my_plan.trajectory_ = respone.trajectory;
+		my_plan.planning_time_ = req.allowed_planning_time;
+		std::cout<<my_plan.planning_time_<<std::endl;
+		//bool success2 = group.execute(my_plan);
 //	ROS_INFO("Visuallizing plan 1 (pose goal) %s", success?"":"FAILED");
-	ROS_INFO("Visuallizing execute 1 (pose goal) %s", success2?"":"FAILED");
+		//ROS_INFO("Visuallizing execute 1 (pose goal) %s", success2?"":"FAILED");
 
 	sleep(1.0);
 	ros::shutdown();

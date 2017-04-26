@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"dash_link" [label="dash_link"];
+"caster_back_link" [label="caster_back_link"];
+"caster_front_link" [label="caster_front_link"];
+"base_link" [label="base_link"];
+"base" [label="base"];
+"shoulder_link" [label="shoulder_link"];
+"upper_arm_link" [label="upper_arm_link"];
+"forearm_link" [label="forearm_link"];
+"wrist_1_link" [label="wrist_1_link"];
+"wrist_2_link" [label="wrist_2_link"];
+"wrist_3_link" [label="wrist_3_link"];
+"ee_link" [label="ee_link"];
+"tool0" [label="tool0"];
+"front_left_wheel" [label="front_left_wheel"];
+"front_right_wheel" [label="front_right_wheel"];
+"hokuyo_link" [label="hokuyo_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_footprint_joint" [label="xyz: 0 0 0.138 \nrpy: 0 -0 0"]
+"base_footprint_joint" -> "dash_link"
+"dash_link" -> "caster_back_joint" [label="xyz: -0.135 0 0.009 \nrpy: -1.5708 0 0"]
+"caster_back_joint" -> "caster_back_link"
+"dash_link" -> "caster_front_joint" [label="xyz: 0.115 0 -0.093 \nrpy: -1.5708 0 0"]
+"caster_front_joint" -> "caster_front_link"
+"dash_link" -> "dashgo_joint" [label="xyz: 0 0 1 \nrpy: 0 -0 0"]
+"dashgo_joint" -> "base_link"
+"base_link" -> "base_link-base_fixed_joint" [label="xyz: 0 0 0 \nrpy: 0 0 -3.14159"]
+"base_link-base_fixed_joint" -> "base"
+"base_link" -> "shoulder_pan_joint" [label="xyz: 0 0 0.1519 \nrpy: 0 -0 0"]
+"shoulder_pan_joint" -> "shoulder_link"
+"shoulder_link" -> "shoulder_lift_joint" [label="xyz: 0 0.1198 0 \nrpy: 0 1.5708 0"]
+"shoulder_lift_joint" -> "upper_arm_link"
+"upper_arm_link" -> "elbow_joint" [label="xyz: 0 -0.0925 0.24365 \nrpy: 0 -0 0"]
+"elbow_joint" -> "forearm_link"
+"forearm_link" -> "wrist_1_joint" [label="xyz: 0 0 0.21325 \nrpy: 0 1.5708 0"]
+"wrist_1_joint" -> "wrist_1_link"
+"wrist_1_link" -> "wrist_2_joint" [label="xyz: 0 0.08505 0 \nrpy: 0 -0 0"]
+"wrist_2_joint" -> "wrist_2_link"
+"wrist_2_link" -> "wrist_3_joint" [label="xyz: 0 0 0.08535 \nrpy: 0 -0 0"]
+"wrist_3_joint" -> "wrist_3_link"
+"wrist_3_link" -> "ee_fixed_joint" [label="xyz: 0 0.0819 0 \nrpy: 0 -0 1.5708"]
+"ee_fixed_joint" -> "ee_link"
+"wrist_3_link" -> "wrist_3_link-tool0_fixed_joint" [label="xyz: 0 0.0819 0 \nrpy: -1.5708 0 0"]
+"wrist_3_link-tool0_fixed_joint" -> "tool0"
+"dash_link" -> "front_left_wheel_joint" [label="xyz: -0.095 -0.21 -0.038 \nrpy: 0 -0 0"]
+"front_left_wheel_joint" -> "front_left_wheel"
+"dash_link" -> "front_right_wheel_joint" [label="xyz: -0.095 0.21 -0.038 \nrpy: 0 -0 0"]
+"front_right_wheel_joint" -> "front_right_wheel"
+"dash_link" -> "hokuyo_joint" [label="xyz: 0.235 0 0.0325 \nrpy: 0 -0 0"]
+"hokuyo_joint" -> "hokuyo_link"
+}

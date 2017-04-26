@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec973491957/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec973491957.dir/build.make CMakeFiles/cmTryCompileExec973491957.dir/build
+make[1]: Entering directory `/home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec973491957.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec973491957.dir/CheckSymbolExists.c.o   -c /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec973491957
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec973491957.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec973491957.dir/CheckSymbolExists.c.o  -o cmTryCompileExec973491957 -rdynamic 
+CMakeFiles/cmTryCompileExec973491957.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec973491957] Error 1
+make[1]: Leaving directory `/home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec973491957/fast] Error 2
+
+File /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec734880382/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec734880382.dir/build.make CMakeFiles/cmTryCompileExec734880382.dir/build
+make[1]: Entering directory `/home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec734880382.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec734880382.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec734880382
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec734880382.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec734880382.dir/CheckFunctionExists.c.o  -o cmTryCompileExec734880382 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec734880382] Error 1
+make[1]: Leaving directory `/home/jon/ros/indigo/ur3_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec734880382/fast] Error 2
+
+

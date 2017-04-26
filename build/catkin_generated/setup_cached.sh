@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# generated from catkin/python/catkin/environment_cache.py
+
+# based on a snapshot of the environment before and after calling the setup script
+# it emulates the modifications of the setup script without recurring computations
+
+# new environment variables
+
+# modified environment variables
+export CMAKE_PREFIX_PATH="/home/jon/ros/indigo/ur3_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/jon/ros/indigo/ur3_ws/devel/lib:$LD_LIBRARY_PATH"
+export PWD="/home/jon/ros/indigo/ur3_ws/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/jon/ros/indigo/ur3_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/jon/ros/indigo/ur3_ws/src:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_commander:/home/jon/ros/indigo/moveit_ws/src/moveit_msgs:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_planners/moveit_planners:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_plugins/moveit_plugins:/home/jon/ros/indigo/moveit_ws/src/moveit_resources:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/moveit_ros:/home/jon/ros/indigo/moveit_ws/src/srdfdom:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_core:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_plugins/moveit_controller_manager_example:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_experimental:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_planners/chomp/chomp_motion_planner:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_planners/chomp/chomp_interface:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/perception:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/planning:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_plugins/moveit_fake_controller_manager:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_kinematics:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_planners/ompl:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/move_group:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/manipulation:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/robot_interaction:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/warehouse:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/benchmarks:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/planning_interface:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/visualization:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_ros/benchmarks_gui:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_setup_assistant:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_plugins/moveit_simple_controller_manager:/home/jon/ros/indigo/moveit_ws/src/moveit/moveit_plugins/moveit_ros_control_interface:/opt/ros/indigo/share:/opt/ros/indigo/stacks"

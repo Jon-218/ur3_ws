@@ -12,9 +12,12 @@
   </include>
 
   <!-- send robot urdf to param server -->
-  <include file="$(find ur_description)/launch/ur3_upload.launch">
-    <arg name="limited" value="$(arg limited)"/>
-  </include>
+  <!--<include file="$(find ur_description)/launch/ur3_upload.launch">-->
+    <!--<arg name="limited" value="$(arg limited)"/>-->
+  <!--</include>-->
+
+  <param unless="$(arg limited)" name="robot_description" command="$(find xacro)/xacro.py '$(find ur_description)/urdf/ur3_robot.urdf.xacro'" />
+  <param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro.py '$(find ur_description)/urdf/ur3_joint_limited_robot.urdf.xacro'" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />

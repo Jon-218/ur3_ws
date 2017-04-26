@@ -1,0 +1,8 @@
+prefix=/home/jon/ros/indigo/ur3_ws/install
+
+Name: ur_bringup
+Description: Description of ur_bringup
+Version: 1.1.6
+Cflags: 
+Libs: -L/home/jon/ros/indigo/ur3_ws/install/lib 
+Requires: 

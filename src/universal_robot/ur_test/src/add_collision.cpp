@@ -23,15 +23,15 @@ int main(int argc, char **argv)
 		shape_msgs::SolidPrimitive primitive;
 		primitive.type = primitive.BOX;
 		primitive.dimensions.resize(3);
-		primitive.dimensions[primitive.BOX_X] = 0.05;
-		primitive.dimensions[primitive.BOX_Y] = 0.2;
+		primitive.dimensions[primitive.BOX_X] = 0.02;
+		primitive.dimensions[primitive.BOX_Y] = 0.07;
 		primitive.dimensions[primitive.BOX_Z] = 0.01;
 
     geometry_msgs::Pose pose;
     pose.orientation.w = 1.0;
     pose.position.x =  0.3;
-    pose.position.y =  0.2;
-    pose.position.z =  0.26;
+    pose.position.y =  0.11;
+    pose.position.z =  0.43;
 
 		flat.primitives.push_back(primitive);
 		flat.primitive_poses.push_back(pose);

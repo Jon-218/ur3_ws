@@ -1,0 +1,2 @@
+set(ur_msgs_MESSAGE_FILES "/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/msg/Analog.msg;/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/msg/Digital.msg;/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/msg/IOStates.msg;/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/msg/RobotStateRTMsg.msg;/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/msg/MasterboardDataMsg.msg")
+set(ur_msgs_SERVICE_FILES "/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/srv/SetPayload.srv;/home/jon/ros/indigo/ur3_ws/src/universal_robot/ur_msgs/srv/SetIO.srv")
